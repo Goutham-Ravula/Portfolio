@@ -1,0 +1,552 @@
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .navbar-nav .nav-link {
+        text-decoration: none !important;
+      }
+    </style>
+    <style>
+      .round-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .name {
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .line {
+        border-bottom: 2px solid #333;
+        width: 100px;
+        margin-top: 10px;
+      }
+      .title {
+        font-style: italic;
+        color: #777;
+      }
+      .bg-white {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #ffebcd;
+        margin: 0;
+      }
+      .profile-pic {
+        background-color: #ffebcd;
+        border-radius: 20px;
+        padding: 10px;
+      }
+      .left-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+
+    </style>
+  </head>
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#" button id="projects-button" class="text-sm font-semibold leading-6 text-gray-900">Projects</a>
+        <button id="skills-button" class="text-sm font-semibold leading-6 text-gray-900" onclick="scrollToSkills()">Skills</button>
+        <button id="contacts-button" class="text-sm font-semibold leading-6 text-gray-900" onclick="scrollToContacts()">Contacts</button>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden" role="dialog" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Projects</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Skills</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+            </div>
+            <div class="py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <body>
+  
+
+
+    <section class="py-20">
+      <div class="container mx-auto px-5 flex flex-wrap items-center">
+        <!-- Left Column for picture and name-->
+        <div class="lg:w-1/2 w-full lg:px-4 flex flex-col items-center left-column" style="position: relative; z-index: 2;">
+          <div class="profile-pic">
+            <img src="./assets/Passport Picture.jpeg" alt="Goutham profile-picture" class="round-image mb-2">
+            <div class="name">Goutham Ravula</div>
+            <div class="line" style="margin-left: 100px;"></div>
+            <div class="title">Data Analyst</div>
+          </div>
+        </div>
+        
+        <!-- Right Column for summary and header -->
+  <div class="lg:w-1/2 w-full lg:px-4 mt-6 lg:mt-0">
+    &nbsp;
+    <font size="+2">
+      <strong><h1>Aspiring Analyst</h1></strong>
+    </font>
+    <p class="text-gray-600 mt-2.5">Determined with an Analytical Virtue and Stronghold in Statistics. Self-motivated and ambitious individual, seeking for an opportunity to apply the skill set procured towards the growth and amelioration of the organization and to gain ample experience to deepen my knowledge and hone my skills.</p>
+    <a href="./assets/GouthamRavula_Resume.pdf" download target="blank">
+    <button class="mt-8 bg-white-600 text-blue px-4 py-2 rounded-full border-2 border-blue-600 hover:border-blue-700 hover:shadow-blue-700 transition-transform transform hover:scale-105 hover:bg-blue-700 hover:text-white focus:outline-none focus:border-blue-700 focus:shadow-blue-700">
+        Download CV
+      </button>
+    </a>
+
+    <button id="contact-button" class="mt-8 bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700 hover:text-white hover:border-blue-700 hover:shadow-blue-700 focus:outline-none focus:border-blue-700 focus:shadow-blue-700">Contacts</button>
+  </div>
+
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <!-- projects section of the website-->
+  <br>
+  <br>
+  <br>
+  <section id="projects-section" class="py-20">
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      <div>
+      </div>
+      <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+          <span class="relative">Recent</span>
+        </span>
+        Projects
+      </h2>
+    </div>  
+  <!-- text space with 3 images to the right-->
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+        <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
+          <svg class="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points=" 8,5 8,1 16,1 16,5" stroke-linejoin="round"></polyline>
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="9,15 1,15 1,5 23,5 23,15 15,15" stroke-linejoin="round"></polyline>
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="22,18 22,23 2,23 2,18" stroke-linejoin="round"></polyline>
+            <rect x="9" y="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" width="6" height="4" stroke-linejoin="round"></rect>
+          </svg>
+        </div>
+        <div class="max-w-xl mb-6">
+          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            Stock Trend<br class="hidden md:block" />
+            Prediction
+            <span class="inline-block text-deep-purple-accent-400">Web App</span>
+          </h2>
+          <p class="text-base text-gray-700 md:text-lg">
+            This project is a data-driven exploration of stock trends and predictions, leveraging APIs, regression modeling, and comprehensive model evaluation. It empowers users to input stock symbols and gain valuable insights into historical performance and future projections through an interactive dashboard.
+          </p>
+        </div>
+        <div>
+          <a href="https://github.com/Goutham-Ravula/Stock-Trend-Prediction" target="blank"aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+            Learn more
+            <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+              <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center justify-center -mx-4 lg:pl-8">
+        <div class="flex flex-col items-end px-3">
+          <img
+            class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+            src="./assets/Model Evaluation.jpeg"?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            alt=""
+          />
+          <img class="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40" src="./assets/streamlit_hero.jpg" alt="" />
+        </div>
+        <div class="px-3">
+          <img class="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80" src="./assets/Stock.jpg"?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Left image with text on right and features displayed -->
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="grid gap-5 row-gap-10 lg:grid-cols-2">
+      <!-- Right Column -->
+      
+      <div>
+        <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="./assets/Fake_news.avif"?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" alt="" />
+      </div>
+      <!-- Left Column -->
+      <div class="flex flex-col justify-center">
+        <div class="max-w-xl mb-6">
+          <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
+            <svg class="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
+              <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points=" 8,5 8,1 16,1 16,5" stroke-linejoin="round"></polyline>
+              <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="9,15 1,15 1,5 23,5 23,15 15,15" stroke-linejoin="round"></polyline>
+              <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="22,18 22,23 2,23 2,18" stroke-linejoin="round"></polyline>
+              <rect x="9" y="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" width="6" height="4" stroke-linejoin="round"></rect>
+            </svg>
+          </div>
+          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            Fake News<br class="hidden md:block" />
+            Detection
+            <span class="relative px-1">
+              <div class="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400"></div>
+              <span class="relative inline-block text-deep-purple-accent-400"></span>
+            </span>
+          </h2>
+          <p class="text-base text-gray-700 md:text-lg">
+            
+          This project represents a robust application of machine learning techniques, including Linear Regression, Logistic Regression, Random Forest, and Decision Tree, to combat the pervasive issue of fake news. By harnessing APIs and supervised learning, it efficiently categorizes news articles as either genuine or counterfeit. The script's data preprocessing ensures the textual data is primed for analysis.
+          </p>
+        </div>
+          <a href="https://github.com/Goutham-Ravula/Fake_news_detection" target="blank" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+            Learn more
+            <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+              <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+            </svg>
+          </a>
+          <!-- Left Column Content -->
+          <!-- ... -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- text space with 1 images to the right-->
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div class="lg:pr-10">
+        <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
+          <svg class="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points=" 8,5 8,1 16,1 16,5" stroke-linejoin="round"></polyline>
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="9,15 1,15 1,5 23,5 23,15 15,15" stroke-linejoin="round"></polyline>
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="22,18 22,23 2,23 2,18" stroke-linejoin="round"></polyline>
+            <rect x="9" y="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" width="6" height="4" stroke-linejoin="round"></rect>
+          </svg>
+        </div>
+        <h5 class="mb-4 text-4xl font-extrabold leading-none">
+          Pizza Sales<br class="hidden md:block" />
+          Power BI
+          <span class="inline-block text-deep-purple-accent-400">Dashboard</span>
+        </h5>
+        <p class="mb-6 text-gray-900">
+          This project leverages SQL and Power BI to transform a pizza sales database into an insightful dashboard. Explore key metrics, charts, and text-based insights to gain a quick overview of the company's performance.
+        </p>
+        <hr class="mb-5 border-gray-300" />
+        <a href="https://github.com/Goutham-Ravula/Power-BI-Project" target="blank"s aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+          Learn more
+          <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+          </svg>
+        </a>
+      </div>
+      <div>
+        <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="./assets/bi_dashboard.png"?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" alt="" />
+      </div>
+    </div>
+  </div>
+    <div class="absolute inset-x-0 top-[calc(50%-30rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(50%-30rem)]" aria-hidden="true">
+      <div class="relative left-[calc(50%-3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+  </section> 
+
+
+  <!-- Skills page -->
+<section id="skills-section" class="py-16">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <div>
+        </div>
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+            <span class="relative">My</span>
+          </span>
+          Skills
+        </h2>
+      </div>
+      <div class="grid max-w-screen-lg gap-8 row-gap-10 mx-auto lg:grid-cols-2">
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">Python</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Experienced
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">MySQL</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Experienced
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">Tableau</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Experienced
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">Power BI</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Experienced
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">ML</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Intermediate
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">Excel</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Experienced
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">Stata</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Intermediate
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+          <div class="mr-4">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+              <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-3 text-xl font-bold leading-5">QGIS</h6>
+            <p class="mb-3 text-sm text-gray-900">
+              Intermediate
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+
+
+  
+
+
+
+
+
+<section id="contacts-section" class="py-16">
+  <div id="contact-section" class="py-16">
+      <div class="container px-6 py-12 mx-auto">
+          <div class="text-center">
+              <p class="font-medium text-blue-500 dark:text-blue-400">Contact</p>
+  
+              <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-grey">Get in touch</h1>
+  
+          <div class="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
+              <div class="flex flex-col items-center justify-center text-center">
+                  <span class="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                  </span>
+                  <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">Email</h2>
+                  <p class="mt-2 text-blue-500 dark:text-blue-400">
+                    <a href = "mailto: gouthamravula@gmail.com"target="blank">Gouthamravula@gmail.com</a></p>
+              </div>
+  
+              <div class="flex flex-col items-center justify-center text-center">
+                <div class="bg-gray-800 rounded-full w-14 h-14 flex items-center justify-center mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="#0077b5" viewBox="0 0 24 24">
+                    <path
+                      d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                    />
+                  </svg>
+                </div>
+                  
+                  <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">linkedIn</h2>
+                  <p class="mt-2 text-blue-500 dark:text-blue-400">
+                    <a href="https://www.linkedin.com/in/goutham-ravula/"target="_blank">Linkedin.com/Goutham-Ravula</a>
+                  </p>
+              </div>
+  
+              <div class="flex flex-col items-center justify-center text-center">
+                  <span class="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                      </svg>
+                  </span>
+                  
+                  <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">Phone</h2>
+                  <p class="mt-2 text-blue-500 dark:text-blue-400">+91 9398841448</p>
+              </div>
+          </div>
+      </div>
+    </div>
+</section> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+  </html>
+
+
+
+  <script>
+    function scrollToProjects() {
+      const projectsSection = document.getElementById('projects-section');
+
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    const projectsButton = document.getElementById('projects-button');
+    if (projectsButton) {
+      projectsButton.addEventListener('click', scrollToProjects);
+    }
+  </script>
+
+<script>
+  function scrollToContact() {
+    const contactSection = document.getElementById('contact-section');
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  const contactButton = document.getElementById('contact-button');
+  if (contactButton) {
+    contactButton.addEventListener('click', scrollToContact);
+  }
+</script>
+
+<script>
+  function scrollToSkills() {
+  const skillsSection = document.getElementById('skills-section');
+
+  if (skillsSection) {
+    skillsSection.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+  const skillsButton = document.getElementById('skills-button');
+  if (skillsButton) {
+    skillsButton.addEventListener('click', scrollToskills);
+  }
+</script>
+
+<script>
+  function scrollToContacts() {
+    const contactsSection = document.getElementById("contacts-section");
+    contactsSection.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
