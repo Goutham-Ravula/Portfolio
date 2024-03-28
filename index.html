@@ -1,61 +1,115 @@
-  <!doctype html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .navbar-nav .nav-link {
-        text-decoration: none !important;
-      }
-    </style>
-    <style>
-      .round-image {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        border-radius: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .name {
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .line {
-        border-bottom: 2px solid #333;
-        width: 100px;
-        margin-top: 10px;
-      }
-      .title {
-        font-style: italic;
-        color: #777;
-      }
-      .bg-white {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background-color: #ffebcd;
-        margin: 0;
-      }
-      .profile-pic {
-        background-color: #ffebcd;
-        border-radius: 20px;
-        padding: 10px;
-      }
-      .left-column {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .navbar-nav .nav-link {
+      text-decoration: none !important;
+    }
+  </style>
+  <style>
+    .round-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .name {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .line {
+      border-bottom: 2px solid #333;
+      width: 100px;
+      margin-top: 10px;
+    }
+    .title {
+      font-style: italic;
+      color: #777;
+    }
+    .bg-white {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #ffebcd;
+      margin: 0;
+    }
+    .profile-pic {
+      background-color: #ffebcd;
+      border-radius: 20px;
+      padding: 10px;
+    }
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    * {box-sizing: border-box}
 
+    .container {
+      position: relative;
+      width: 50%;
+    }
 
-    </style>
+    .image {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .container:hover .image {
+      opacity: 0.2;
+    }
+
+    .container:hover .middle {
+      opacity: 1;
+    }
+
+    .text {
+      background-color: #2563eb;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+
+    .description {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: .5s ease;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .container:hover .description {
+      opacity: 1;
+    }
+  </style>
   </head>
   <header class="absolute inset-x-0 top-0 z-50">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -115,6 +169,7 @@
   </header>
   <body>
   
+  
 
 
     <section class="py-20">
@@ -130,41 +185,38 @@
         </div>
         
         <!-- Right Column for summary and header -->
-  <div class="lg:w-1/2 w-full lg:px-4 mt-6 lg:mt-0">
-    &nbsp;
-    <font size="+2">
-      <strong><h1>Aspiring Analyst</h1></strong>
-    </font>
-    <p class="text-gray-600 mt-2.5">Determined with an Analytical Virtue and Stronghold in Statistics. Self-motivated and ambitious individual, seeking for an opportunity to apply the skill set procured towards the growth and amelioration of the organization and to gain ample experience to deepen my knowledge and hone my skills.</p>
-    <a href="./assets/GouthamRavula_Resume.pdf" download target="blank">
-    <button class="mt-8 bg-white-600 text-blue px-4 py-2 rounded-full border-2 border-blue-600 hover:border-blue-700 hover:shadow-blue-700 transition-transform transform hover:scale-105 hover:bg-blue-700 hover:text-white focus:outline-none focus:border-blue-700 focus:shadow-blue-700">
-        Download CV
-      </button>
-    </a>
-
-    <button id="contact-button" class="mt-8 bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700 hover:text-white hover:border-blue-700 hover:shadow-blue-700 focus:outline-none focus:border-blue-700 focus:shadow-blue-700">Contacts</button>
-  </div>
-
-  </div>
-  </div>
-  </div>
-  </section>
-
-  <!-- projects section of the website-->
-  <br>
-  <br>
-  <br>
-  <section id="projects-section" class="py-20">
-    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-      <div>
+        <div class="lg:w-1/2 w-full lg:px-4 mt-6 lg:mt-0">
+          &nbsp;
+          <font size="+2">
+            <strong><h1>Aspiring Analyst</h1></strong>
+          </font>
+          <p class="text-gray-600 mt-2.5">Determined with an Analytical Virtue and Stronghold in Statistics. Self-motivated and ambitious individual, seeking for an opportunity to apply the skill set procured towards the growth and amelioration of the organization and to gain ample experience to deepen my knowledge and hone my skills.</p>
+          <a href="./assets/GouthamRavula_Resume.pdf" download target="blank">
+            <button class="mt-8 bg-white-600 text-blue px-4 py-2 rounded-full border-2 border-blue-600 hover:border-blue-700 hover:shadow-blue-700 transition-transform transform hover:scale-105 hover:bg-blue-700 hover:text-white focus:outline-none focus:border-blue-700 focus:shadow-blue-700">
+              Download CV
+            </button>
+          </a>
+    
+          <button id="contact-button" class="mt-8 bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700 hover:text-white hover:border-blue-700 hover:shadow-blue-700 focus:outline-none focus:border-blue-700 focus:shadow-blue-700">Contacts</button>
+        </div>
       </div>
-      <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-          <span class="relative">Recent</span>
-        </span>
-        Projects
-      </h2>
-    </div>  
-  <!-- text space with 3 images to the right-->
+    </section>
+    
+
+<!-- Projects section of the website -->
+<br>
+<br>
+<br>
+<section id="projects-section" class="py-20">
+  <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+    <div>
+    </div>
+    <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+      <span class="relative">Recent</span>
+      <span>Projects</span>
+    </h2>
+  </div>
+  <!-- Text space with 3 images to the right -->
   <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <div class="grid gap-10 lg:grid-cols-2">
       <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
@@ -178,16 +230,16 @@
         </div>
         <div class="max-w-xl mb-6">
           <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            Stock Trend<br class="hidden md:block" />
-            Prediction
-            <span class="inline-block text-deep-purple-accent-400">Web App</span>
+            Customer<br class="hidden md:block" />
+            Segmentation
+            <span class="inline-block text-deep-purple-accent-400"></span>
           </h2>
           <p class="text-base text-gray-700 md:text-lg">
-            This project is a data-driven exploration of stock trends and predictions, leveraging APIs, regression modeling, and comprehensive model evaluation. It empowers users to input stock symbols and gain valuable insights into historical performance and future projections through an interactive dashboard.
+            I leverage machine learning to categorize consumers based on their transactional behavior. With a focus on automating customer categorization and evaluating classifier performance, this project offers insights into tailored marketing strategies and optimized product offerings.
           </p>
         </div>
         <div>
-          <a href="https://github.com/Goutham-Ravula/Stock-Trend-Prediction" target="blank"aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+          <a href="https://github.com/Goutham-Ravula/customer-segmentation/tree/main" target="_blank" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
             Learn more
             <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
               <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
@@ -197,69 +249,65 @@
       </div>
       <div class="flex items-center justify-center -mx-4 lg:pl-8">
         <div class="flex flex-col items-end px-3">
-          <img
-            class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-            src="./assets/Model Evaluation.jpeg"?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          />
-          <img class="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40" src="./assets/streamlit_hero.jpg" alt="" />
+          <img class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56" src="./assets/PCA.jpg" alt="" />
+          <img class="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40" src="./assets/CM.jpg" alt="" />
         </div>
         <div class="px-3">
-          <img class="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80" src="./assets/Stock.jpg"?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" alt="" />
+          <img class="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80" src="./assets/CS.jpg" alt="" />
         </div>
       </div>
     </div>
   </div>
+</section>
 
 
 
-  <!-- Left image with text on right and features displayed -->
-  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-    <div class="grid gap-5 row-gap-10 lg:grid-cols-2">
-      <!-- Right Column -->
-      
-      <div>
-        <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="./assets/Fake_news.avif"?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" alt="" />
-      </div>
-      <!-- Left Column -->
-      <div class="flex flex-col justify-center">
-        <div class="max-w-xl mb-6">
-          <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
-            <svg class="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
-              <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points=" 8,5 8,1 16,1 16,5" stroke-linejoin="round"></polyline>
-              <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="9,15 1,15 1,5 23,5 23,15 15,15" stroke-linejoin="round"></polyline>
-              <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="22,18 22,23 2,23 2,18" stroke-linejoin="round"></polyline>
-              <rect x="9" y="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" width="6" height="4" stroke-linejoin="round"></rect>
-            </svg>
-          </div>
-          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            Fake News<br class="hidden md:block" />
-            Detection
-            <span class="relative px-1">
-              <div class="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400"></div>
-              <span class="relative inline-block text-deep-purple-accent-400"></span>
-            </span>
-          </h2>
-          <p class="text-base text-gray-700 md:text-lg">
-            
-          This project represents a robust application of machine learning techniques, including Linear Regression, Logistic Regression, Random Forest, and Decision Tree, to combat the pervasive issue of fake news. By harnessing APIs and supervised learning, it efficiently categorizes news articles as either genuine or counterfeit. The script's data preprocessing ensures the textual data is primed for analysis.
-          </p>
+
+<!-- Left image with text on right and features displayed -->
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="grid gap-5 row-gap-10 lg:grid-cols-2">
+    <!-- Right Column -->
+    <div>
+    <!--For shadow add: rounded shadow-lg before sm:h-96-->
+      <img class="object-cover w-full h-56 sm:h-96" src="./assets/mbgabg.png" alt="" />
+    </div>
+    <!-- Left Column -->
+    <div class="flex flex-col justify-center">
+      <div class="max-w-xl mb-6">
+        <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
+          <svg class="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points=" 8,5 8,1 16,1 16,5" stroke-linejoin="round"></polyline>
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="9,15 1,15 1,5 23,5 23,15 15,15" stroke-linejoin="round"></polyline>
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="22,18 22,23 2,23 2,18" stroke-linejoin="round"></polyline>
+            <rect x="9" y="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" width="6" height="4" stroke-linejoin="round"></rect>
+          </svg>
         </div>
-          <a href="https://github.com/Goutham-Ravula/Fake_news_detection" target="blank" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
-            Learn more
-            <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
-              <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
-            </svg>
-          </a>
-          <!-- Left Column Content -->
-          <!-- ... -->
-        </div>
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+          Masket Basket<br class="hidden md:block" />
+          Analysis
+          <span class="relative px-1">
+            <div class="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400"></div>
+            <span class="relative inline-block text-deep-purple-accent-400"></span>
+          </span>
+        </h2>
+        <p class="text-base text-gray-700 md:text-lg">
+          This project delves into Market Basket Analysis using the Apriori algorithm, a pivotal method in retail and e-commerce for uncovering product associations. Through Exploratory Data Analysis (EDA), we glean insights into transaction patterns, aided by visualizations highlighting sales trends and product distribution. Employing the Apriori algorithm, we extract association rules, revealing frequent itemsets and key metrics. Visual summaries provide a comprehensive view of product associations.
+        </p>
       </div>
+      <a href="https://github.com/Goutham-Ravula/market-basket-analysis/tree/main" target="_blank" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+        Learn more
+        <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+          <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+        </svg>
+      </a>
+      <!-- Left Column Content -->
+      <!-- ... -->
     </div>
   </div>
+</div>
 
-  <br>
-  <br>
+<br>
+<br>
 
   <!-- text space with 1 images to the right-->
   <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -274,15 +322,15 @@
           </svg>
         </div>
         <h5 class="mb-4 text-4xl font-extrabold leading-none">
-          Pizza Sales<br class="hidden md:block" />
-          Power BI
-          <span class="inline-block text-deep-purple-accent-400">Dashboard</span>
+          Weight Classification<br class="hidden md:block" />
+          ML Model
+          <span class="inline-block text-deep-purple-accent-400"></span>
         </h5>
         <p class="mb-6 text-gray-900">
-          This project leverages SQL and Power BI to transform a pizza sales database into an insightful dashboard. Explore key metrics, charts, and text-based insights to gain a quick overview of the company's performance.
+          This project focuses on building a weight classification system with a user-friendly interface. It encompasses data encoding techniques, employing various algorithms such as SVM, Logistic Regression, and Gradient Boosting. Hyperparameter tuning enhances model performance, while ensemble methods combine predictions for improved accuracy. The culmination is a practical prediction system where users input features like age, height, and gender to obtain a predicted weight class.
         </p>
         <hr class="mb-5 border-gray-300" />
-        <a href="https://github.com/Goutham-Ravula/Power-BI-Project" target="blank"s aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+        <a href="https://github.com/Goutham-Ravula/weight_class_prediction" target="blank"s aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
           Learn more
           <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
             <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
@@ -290,7 +338,7 @@
         </a>
       </div>
       <div>
-        <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="./assets/bi_dashboard.png"?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" alt="" />
+        <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="./assets/WL2.jpeg" alt="" />
       </div>
     </div>
   </div>
@@ -300,8 +348,77 @@
   </section> 
 
 
+
+
+
+
+
+<!-- Card carousel -->
+<div class="max-w-2xl mx-auto">
+  <div id="default-carousel" class="relative" data-carousel="static">
+      <!-- Carousel wrapper -->
+      <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div class="container">
+                  <img src="./assets/Stock.jpg" alt="" class="image">
+                  <div class="middle">
+                    <a href="https://github.com/Goutham-Ravula/Stock-Trend-Prediction" target="_blank" class="text">Learn More ></a>
+                  </div>
+                  <div class="description">
+                    <p>Utilizing stock data and predictive models, the app offers personalized analysis, allowing users insights into trends and predictions.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div class="container">
+                  <img src="./assets/Fake_news.jpg" alt="" class="image">
+                  <div class="middle">
+                    <a href="https://github.com/Goutham-Ravula/Fake_news_detection" target="_blank" class="text">Learn More ></a>
+                  </div>
+                  <div class="description">
+                    <p>Developed fake news detection tool using machine learning and natural language processing. Integrated user-friendly interface for users to input news articles for real-time analysis.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <div class="container">
+                  <img src="./assets/bi_dashboard.png" alt="" class="image">
+                  <div class="middle">
+                    <a href="https://github.com/Goutham-Ravula/Power-BI-Project" target="_blank" class="text">Learn More ></a>
+                  </div>
+                  <div class="description">
+                    <p>Developed an interactive dashboard on Power BI, utilizing SQL queries to validate KPI accuracy and Power Query for data transformation.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Slider controls -->
+      <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              <span class="hidden">Previous</span>
+          </span>
+      </button>
+      <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="hidden">Next</span>
+          </span>
+      </button>
+  </div>
+  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+</div>
+
+
+
+
+
+
   <!-- Skills page -->
-<section id="skills-section" class="py-16">
+<section id="skills-section" class="py-8">
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
@@ -447,74 +564,70 @@
 
 
 
-<section id="contacts-section" class="py-16">
-  <div id="contact-section" class="py-16">
-      <div class="container px-6 py-12 mx-auto">
-          <div class="text-center">
-              <p class="font-medium text-blue-500 dark:text-blue-400">Contact</p>
-  
-              <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-grey">Get in touch</h1>
-  
-          <div class="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
-              <div class="flex flex-col items-center justify-center text-center">
-                  <span class="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                      </svg>
-                  </span>
-                  <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">Email</h2>
-                  <p class="mt-2 text-blue-500 dark:text-blue-400">
-                    <a href = "mailto: gouthamravula@gmail.com"target="blank">Gouthamravula@gmail.com</a></p>
-              </div>
-  
-              <div class="flex flex-col items-center justify-center text-center">
-                <div class="bg-gray-800 rounded-full w-14 h-14 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="#0077b5" viewBox="0 0 24 24">
-                    <path
-                      d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
-                    />
-                  </svg>
-                </div>
-                  
-                  <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">linkedIn</h2>
-                  <p class="mt-2 text-blue-500 dark:text-blue-400">
-                    <a href="https://www.linkedin.com/in/goutham-ravula/"target="_blank">Linkedin.com/Goutham-Ravula</a>
-                  </p>
-              </div>
-  
-              <div class="flex flex-col items-center justify-center text-center">
-                  <span class="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                      </svg>
-                  </span>
-                  
-                  <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">Phone</h2>
-                  <p class="mt-2 text-blue-500 dark:text-blue-400">+91 9398841448</p>
-              </div>
+<section id="contacts-section" class="py-8">
+  <div id="contact-section" class="py-8">
+    <div class="container px-6 py-12 mx-auto">
+      <div class="text-center">
+        <p class="font-medium text-blue-500 dark:text-blue-400">Contact</p>
+        <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-grey">Get in touch</h1>
+      </div>
+      <div class="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
+        <div class="flex flex-col items-center justify-center text-center">
+          <span class="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </span>
+          <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">Email</h2>
+          <p class="mt-2 text-blue-500 dark:text-blue-400">
+            <a href="mailto:gouthamravula@gmail.com" target="_blank">Gouthamravula@gmail.com</a>
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center text-center">
+          <div class="bg-gray-800 rounded-full w-14 h-14 flex items-center justify-center mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="#0077b5" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+            </svg>
           </div>
+          <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">LinkedIn</h2>
+          <p class="mt-2 text-blue-500 dark:text-blue-400">
+            <a href="https://www.linkedin.com/in/goutham-ravula/" target="_blank">Linkedin.com/Goutham-Ravula</a>
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center text-center">
+          <span class="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+          </span>
+          <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-grey">Phone</h2>
+          <p class="mt-2 text-blue-500 dark:text-blue-400">+91 9398841448</p>
+        </div>
       </div>
     </div>
-</section> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
-  </html>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
 
 
 
-  <script>
-    function scrollToProjects() {
-      const projectsSection = document.getElementById('projects-section');
 
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: 'smooth' });
-      }
+<script>
+  function scrollToProjects() {
+    const projectsSection = document.getElementById('projects-section');
+
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
-    const projectsButton = document.getElementById('projects-button');
-    if (projectsButton) {
-      projectsButton.addEventListener('click', scrollToProjects);
-    }
-  </script>
+  }
+  const projectsButton = document.getElementById('projects-button');
+  if (projectsButton) {
+    projectsButton.addEventListener('click', scrollToProjects);
+  }
+</script>
 
 <script>
   function scrollToContact() {
@@ -532,15 +645,15 @@
 
 <script>
   function scrollToSkills() {
-  const skillsSection = document.getElementById('skills-section');
+    const skillsSection = document.getElementById('skills-section');
 
-  if (skillsSection) {
-    skillsSection.scrollIntoView({ behavior: 'smooth' });
+    if (skillsSection) {
+      skillsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
-}
   const skillsButton = document.getElementById('skills-button');
   if (skillsButton) {
-    skillsButton.addEventListener('click', scrollToskills);
+    skillsButton.addEventListener('click', scrollToSkills);
   }
 </script>
 
@@ -549,4 +662,37 @@
     const contactsSection = document.getElementById("contacts-section");
     contactsSection.scrollIntoView({ behavior: "smooth" });
   }
+</script>
+
+<script>
+  const carouselItems = document.querySelectorAll('[data-carousel-item]');
+  let currentItem = 0;
+
+  function showItem(index) {
+    carouselItems.forEach((item, i) => {
+      if (i === index) {
+        item.style.opacity = '100';
+      } else {
+        item.style.opacity = '0';
+      }
+    });
+  }
+
+  showItem(currentItem);
+
+  function nextItem() {
+    currentItem = (currentItem + 1) % carouselItems.length;
+    showItem(currentItem);
+  }
+
+  function prevItem() {
+    currentItem = (currentItem - 1 + carouselItems.length) % carouselItems.length;
+    showItem(currentItem);
+  }
+
+  const prevButton = document.querySelector('[data-carousel-prev]');
+  const nextButton = document.querySelector('[data-carousel-next]');
+
+  prevButton.addEventListener('click', prevItem);
+  nextButton.addEventListener('click', nextItem);
 </script>
